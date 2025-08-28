@@ -14,4 +14,5 @@ Paste your notes, articles, or transcripts – and let AI do the hard work.
 - Backend: Python (Flask / FastAPI) or Node.js  
 - AI Engine: OpenAI GPT API (GPT-4o-mini or GPT-3.5-turbo)  
 - Database (optional): SQLite / Firebase  
+
 ---
