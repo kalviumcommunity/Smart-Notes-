@@ -36,3 +36,24 @@ The name comes from ML terminology:
 - **Zero-shot learning** → No examples, just instructions.
 
 ---
+
+##  System Prompt  
+You are an AI Learning Assistant. Your role is to take user-provided text (notes, articles, transcripts) and:  
+- Summarize long passages into concise explanations  
+- Extract key points in bullet form  
+- Generate quiz-style questions for active recall  
+- Provide outputs in a clean, structured format  
+
+##  User Prompt  
+“Summarize the following text, extract the main points, and generate 3 quiz questions.”  
+
+---
+
+## RTFC Framework Usage
+
+- **R (Role):** AI assistant that summarizes, extracts, and quizzes from input text.  
+- **T (Task):** Build Smart Notes through iterative AI integration milestones.  
+- **F (Format):** Output should be structured (summary, key points, quiz).  
+- **C (Context):** User provides raw text (notes, articles, transcripts).  
+
+---
