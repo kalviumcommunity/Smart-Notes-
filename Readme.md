@@ -150,7 +150,7 @@ int multiply(int a, int b) {
 * Helps in **complex tasks** where one example isn’t enough.
 * Reduces errors and improves **accuracy of code reviews**.
 
-## 🎯 Dynamic Prompting  
+##  Dynamic Prompting  
 
 In CodeSage, we use **Dynamic Prompting**, where the prompt is automatically adapted based on the **user’s input context** (e.g., programming language, code style, or desired output format).  
 This makes the system **flexible and personalized**, instead of relying on fixed instructions.  
