@@ -150,7 +150,7 @@ int multiply(int a, int b) {
 * Helps in **complex tasks** where one example isn’t enough.
 * Reduces errors and improves **accuracy of code reviews**.
 
-## 🎯 Dynamic Prompting  
+##  Dynamic Prompting  
 
 In CodeSage, we use **Dynamic Prompting**, where the prompt is automatically adapted based on the **user’s input context** (e.g., programming language, code style, or desired output format).  
 This makes the system **flexible and personalized**, instead of relying on fixed instructions.  
@@ -208,3 +208,45 @@ Expected Output:
 * Reduces manual work while ensuring **consistent structured outputs**.
 
 
+## 🎯 Chain-of-Thought Prompting  
+
+In CodeSage, we apply **Chain-of-Thought (CoT) Prompting**, where the AI is encouraged to **reason step by step** before providing the final answer.  
+This helps the system explain *why* a piece of code is incorrect, not just point out the issue.  
+
+### 🔹 Chain-of-Thought Prompt  
+
+**System Prompt:**  
+You are an AI code reviewer. Analyze the given code step by step (reasoning internally), then provide your final answer only in JSON format with three fields: `issues`, `suggestions`, and `overall_feedback`. Do not reveal the reasoning steps to the user.  
+
+**User Prompt:**  
+Review the following Python code:  
+
+```python
+def is_even(n):
+    if n % 2 == 1:
+        return True
+    return False
+````
+
+### 🔹 Expected Reasoning (hidden to user)
+
+1. The function is meant to check if a number is even.
+2. Current condition checks `n % 2 == 1`, which actually detects **odd numbers**.
+3. The return values are inverted.
+4. Correct logic should be `n % 2 == 0`.
+
+### 🔹 Final Output (shown to user)
+
+```json
+{
+  "issues": ["The condition checks for odd numbers instead of even."],
+  "suggestions": ["Change condition to 'n % 2 == 0' for even check."],
+  "overall_feedback": "The function incorrectly identifies odd numbers as even."
+}
+```
+
+###  Why Chain-of-Thought Prompting?
+
+* Ensures **deeper reasoning** behind feedback.
+* Reduces **false positives/negatives** in bug detection.
+* Provides **explainable AI** code reviews with accurate fixes.
