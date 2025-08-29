@@ -57,3 +57,34 @@ You are an AI Learning Assistant. Your role is to take user-provided text (notes
 - **C (Context):** User provides raw text (notes, articles, transcripts).  
 
 ---
+
+### 🔹 One-Shot Prompt  
+
+**System Prompt:**  
+You are an AI code reviewer. Analyze the given code, detect bugs, and suggest improvements.  
+Always return results in JSON format with three fields: `issues`, `suggestions`, and `overall_feedback`.  
+
+---
+
+**User Prompt (with one example):**  
+
+Example Input (Python):  
+```python
+def divide(a, b):
+    return a * b  # intended to be division
+
+{
+  "issues": ["The operator used is multiplication instead of division."],
+  "suggestions": ["Replace '*' with '/' to correctly divide the numbers."],
+  "overall_feedback": "Logic error detected in the function implementation."
+}
+
+public int Subtract(int a, int b) {
+    return a + b; // intended to be subtraction
+}
+
+Why One-Shot Prompting?
+
+-Provides one guiding example to set the response pattern.
+-Ensures the AI generates consistent, structured outputs.
+-Reduces ambiguity compared to zero-shot prompting.
